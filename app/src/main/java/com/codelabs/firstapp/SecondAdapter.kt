@@ -5,8 +5,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.codelabs.firstapp.MahasiswaModel
-import com.codelabs.firstapp.R
 
 import kotlinx.android.synthetic.main.activity_second_row_item.view.*
 
@@ -21,8 +19,7 @@ class SecondAdapter(private var list: List<MahasiswaModel>, private val context:
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SecondViewHelper {
         val view = LayoutInflater.from(context).inflate(R.layout.activity_second_row_item, null)
-        val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        view.layoutParams = lp
+
         return SecondViewHelper(view)
     }
 

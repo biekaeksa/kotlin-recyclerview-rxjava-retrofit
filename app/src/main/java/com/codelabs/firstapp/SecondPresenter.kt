@@ -8,8 +8,8 @@ import rx.schedulers.Schedulers
 /**
  * Created by Biekaeksa on 9/9/2017.
  */
-class SecondPresenter: SecondContract.Presenter {
-   lateinit var foodView : SecondContract.View
+class SecondPresenter : SecondContract.Presenter {
+    lateinit var foodView: SecondContract.View
 
     override fun onAttach(view: SecondContract.View) {
         foodView = view
@@ -19,18 +19,21 @@ class SecondPresenter: SecondContract.Presenter {
         foodView = null!!
     }
 
-    override fun loadFood(category :String) {
+    override fun loadFood(category: String) {
         foodView.showProgress()
-        val call : Observable<MahasiswaModel.MahasiswaDataModel> = APIService.factor.create().loadFoodCategory(category)
+        val call: Observable<MahasiswaModel.MahasiswaDataModel> = APIService.factor.create().loadFoodCategory(category)
         call.subscribeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        {result ->
-                            Log.e("Sukses ", "Coy")
-                            val list = ArrayList<MahasiswaModel>()
+                        { result: MahasiswaModel.MahasiswaDataModel ->
+                            foodView.hideProgress()
 
-                            foodView.showFoodData(result.result)},
-                        { e -> Log.e("Error ", e.message)})
+                            foodView.showFoodData(result.result)
+                        },
+                        { e: Throwable ->
+                            foodView.hideProgress()
+                            Log.e("Error ", e.message)
+                        })
     }
 
 

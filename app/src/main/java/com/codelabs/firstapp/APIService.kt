@@ -1,6 +1,7 @@
 package com.codelabs.firstapp
 
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,12 +20,15 @@ interface APIService {
     }
 
     @GET("makanan/{kategori}")
-    fun loadFoodCategory(@Path("kategori") kategori : String) : Observable<MahasiswaModel.MahasiswaDataModel>
+    fun loadFoodCategory(@Path("kategori") kategori: String): Observable<MahasiswaModel.MahasiswaDataModel>
 
     class factor {
         companion object {
-             fun create(): APIService {
+            fun create(): APIService {
+                val logging = HttpLoggingInterceptor()
+                logging.level = HttpLoggingInterceptor.Level.BODY
                 val builder = OkHttpClient().newBuilder()
+                builder.addInterceptor(logging)
                 builder.readTimeout(20, TimeUnit.SECONDS)
                 builder.connectTimeout(10, TimeUnit.SECONDS)
                 builder.writeTimeout(10, TimeUnit.SECONDS)
