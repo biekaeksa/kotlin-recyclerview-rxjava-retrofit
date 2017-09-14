@@ -1,6 +1,6 @@
 package com.codelabs.firstapp.data.source.remote
 
-import com.codelabs.firstapp.AppConstant
+import com.codelabs.firstapp.util.AppConstant
 import com.codelabs.firstapp.data.MahasiswaModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

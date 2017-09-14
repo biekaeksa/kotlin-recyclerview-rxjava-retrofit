@@ -1,4 +1,4 @@
-package com.codelabs.firstapp
+package com.codelabs.firstapp.util
 
 /**
  * Created by Biekaeksa on 9/9/2017.
