@@ -1,9 +1,11 @@
-package com.codelabs.firstapp
+package com.codelabs.firstapp.main
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.codelabs.firstapp.R
+import com.codelabs.firstapp.second.SecondActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 

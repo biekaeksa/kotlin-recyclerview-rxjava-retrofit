@@ -1,4 +1,4 @@
-package com.codelabs.firstapp
+package com.codelabs.firstapp.data
 
 /**
  * Created by Biekaeksa on 8/5/2017.

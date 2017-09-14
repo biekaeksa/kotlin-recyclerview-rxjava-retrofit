@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.codelabs.firstapp.MainActivity">
+    tools:context="com.codelabs.firstapp.main.MainActivity">
 
     <EditText
         android:id="@+id/main_edittext_nama"

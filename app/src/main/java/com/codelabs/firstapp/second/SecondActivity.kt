@@ -1,4 +1,4 @@
-package com.codelabs.firstapp
+package com.codelabs.firstapp.second
 
 
 import android.content.Context
@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
+import com.codelabs.firstapp.R
+import com.codelabs.firstapp.data.MahasiswaModel
 
 
 import kotlinx.android.synthetic.main.activity_second.*

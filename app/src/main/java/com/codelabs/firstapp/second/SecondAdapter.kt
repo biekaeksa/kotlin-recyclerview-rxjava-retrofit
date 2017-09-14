@@ -1,10 +1,12 @@
-package com.codelabs.firstapp
+package com.codelabs.firstapp.second
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codelabs.firstapp.R
+import com.codelabs.firstapp.data.MahasiswaModel
 
 import kotlinx.android.synthetic.main.activity_second_row_item.view.*
 
